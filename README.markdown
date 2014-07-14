@@ -2961,7 +2961,7 @@ $(document).off('.alert.data-api');   // alertだけ無効化
 
 RubyやPythonなどはとっくの昔に煩わしいセミコロンを省略してしまっており、JavaScriptもかなり前にセミコロンなしでもよい構文に変更されている。
 
-ただし後付けのため仕様に若干おかしな点があるのもよく知られている。そのため古典的な教科書(特にCrockfordの"The Good Parts")は「セミコロンは絶対付けろ!」と言っている(しかしCrockfordの言い方はかなり高圧的で反発も多い)。
+ただし後付けのため仕様に若干おかしな点があるのもよく知られている。そのため古典的な教科書(特にCrockfordの"The Good Parts")は「セミコロンは絶対付けろ!」と言っている(しかしCrockfordの言い方は高圧的で反発も多い)。
 
 これに対抗するのが「行末セミコロンを意図的に書かない派」で、セミコロンなしで問題を生じる箇所だけ次行の先頭に何か置けばいいという主張は確かにうなずける(これでいちいち書く手間が省けるのならお安いもの)。
 
@@ -3239,7 +3239,7 @@ ul.nav.nav-pills
             * Componentsのexampleはほぼ付けているが、本sectionには付いてない
         * href='#'はaの場合に必要(hoverした時にcursor形状を変える効果)
 
-> data-targetに関する説明が意味不明。a(... data-target='#', href='/page.html')としてみた所で、これはメニューバーの部分なのでクリックするとropdownするだけで/page.htmlにはリンクしない。
+> data-targetに関する説明が意味不明。a(... data-target='#', href='/page.html')としてみた所で、これはメニューバーの部分なのでクリックするとdropdownするだけで/page.htmlにはリンクしない。
 
 なおButtonの中にdropdownを入れる場合の外枠はdiv.dropdownとdiv.btn-groupのどちらでもよい。ただし.btn-groupが必須なのはボタングループ内のボタンにdropdownを挿入する場合(nesting)だけなので、それ以外はdiv.dropdownを使う方が明解だと思う。
 
