@@ -38,7 +38,7 @@ Getting Started
 
 ## Download
 
-CDNを利用できる。
+> (後で補足) これは2014/6時点のURL(今はもう使えない)。1ヶ月もしないうちにCDNがNetDNAからMaxCDNに変更されている。この部分は今後もしょっちゅう変わることが予想されるのでその都度原文ページを見て確認すること。
 
 ``` html
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-min.css">
