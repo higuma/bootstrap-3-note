@@ -156,7 +156,7 @@ script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
 
 ``` jade
 script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
-script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
 // (その後application.js等)
 ```
 
