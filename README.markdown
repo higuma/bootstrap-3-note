@@ -12,6 +12,7 @@ Bootstrap 3 学習ノート
 > 
 > なお「ここは違うのでは」「こうした方がよいのでは」などという点がありましたらGitHubのissuesかpull requestなどでお教え頂けるとありがたいです(6/19記)。
 
+> > その後しばらくしてバージョンが3.2に上がり、内容が少し変更されましたので最小限の対応を行いました(7/23記)。
 
 はじめに
 ========================================================================
@@ -38,32 +39,48 @@ Getting Started
 
 ## Download
 
-> (後で補足) これは2014/6時点のURL(今はもう使えない)。1ヶ月もしないうちにCDNがNetDNAからMaxCDNに変更されている。この部分は今後もしょっちゅう変わることが予想されるのでその都度原文ページを見て確認すること。
+CDNを利用できる。
+
+> CDNがNetDNA(3.1.1まで)からMaxCDN(3.2以降)に変更されている。この部分は今後も頻繁に変わることが予想されるのでその都度原文ページを見て確認すること。
 
 ``` html
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 ```
 
 今回は特別なツールは使わずGitHubのzipballをdownloadする。
 
 <https://github.com/twbs/bootstrap>
 
-> Bower(って何?)でインストールしなさいと書いてあるがこれはtwitter製パッケージマネージャ(npmの後継?)。検索するといろいろ便利らしいが今回は略(覚えることが多過ぎてもう...)。
+> もし全体をライブラリ管理するならbower(twitter製パッケージマネージャ)が有力。例えばjQueryもbowerからインストールしてバージョン管理してもらうことができる(ただしそこまでやらなくてもという気もする)。
 
 ## What's included
 
-現バージョンは3.1.1だが、今回のように純粋に単に利用するだけの場合はdist/の中だけ利用すればいい。ここに実行時用ファイル一式がある。またdocs/の中にドキュメント一式がある。
+まずBootstrapはjQueryを利用している。バージョン依存性はbower.jsonに書いてある(>= 1.9.0)。
+
+今回のように純粋に単に利用するだけの場合はdist/の中だけ利用すればいい。ここに実行時用ファイル一式がある。またdocs/の中にドキュメント一式がある。
 
 > GitHub repoから昔のバージョン(全てのcommit)をダウンロードできる。以下はその一例(git cloneして自分でコマンド操作するより簡単)。
 > 
 > * `branch: `ドロップダウンからtags v2.3.2を選択
 > * ページがその時点の内容に切り替わるので、`Download ZIP`でダウンロード
+
+## Compiling CSS and JavaScript
+
+> ここは最初はスキップした方がいい。
+
+ビルドツールにはGruntを使っている。生成コマンドは次の通り。
+
+* `grunt dist` - CSSとJavaScriptを生成
+* `grunt watch` - 更新をWatch
+* `grunt test` - テスト実行
+* `grunt` - 全てを生成
 
 ## Basic template
 
@@ -83,7 +100,7 @@ Getting Started
          media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
@@ -92,7 +109,7 @@ Getting Started
     <p>ここが本文(contents)</p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
@@ -105,7 +122,7 @@ Getting Started
 
 ``` html
 <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 ```
@@ -130,7 +147,7 @@ Respond.jsは次の解説を参照。ただし今回は深くは立ち入らな�
 
 ``` jade
 <!--[if lt IE 9]>
-script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js")
 script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
 <![endif]-->
 ```
@@ -229,6 +246,8 @@ HTML側はnavbarにこのクラスを追加すればよい。この程度なら�
 日本語訳は(まだ)ない。
 
 > 和訳作成プロジェクトがあるかも知れないが完成まで待つ訳にはいかない。それにこういう文書は足が早いのでどうせ2年もすれば古くなる。結局(たとえ和訳があっても)原文を読むのが一番の近道。
+
+> > こうやって書いた後1ヶ月も立たないうちにもうバージョンが上がって文章も変わっている。翻訳など待っていては話にならない。
 
 ------------------------------------------------------------------------
 
@@ -628,12 +647,22 @@ pushの意味は明解だが、pullの意味がどうも分からない(どこ�
 TypographyはBootstrapのCSS設定の説明が主だが、ところどころclass設定の説明がある(全部まとめて一覧表にしてくれればいいのに...という訳にもいかないのだろう)。
 
 * p.lead - パラグラフ強調(太く大きい字になる)
-* .small - `<small>`の代わりに使える
+* mark - ハイライト用HTML5タグ
+* del - 取り消し線
+* s - 削除済みの内容(表示は取り消し線と同様)
+* int - 挿入された文章(表示はアンダーライン)
+* u - アンダーライン
+* .small - tagのsmallの代わりに使える
+* strong - 強調
 * テキストアラインメント
     * .text-left - 左詰め
     * .text-center - 中央
     * .text-right - 右詰め
     * .text-justify - 均等割付(のはずだが実際は左詰め - どうも分からない)
+* 大文字小文字
+    * .text-lowercase - 全部小文字
+    * .text-uppercase - 全部大文字
+    * .text-capitalize - キャピタライズ
 * abbr(そう言えば使ったことない...)に表示効果を設定している
     * abbr.initialism - `<abbr>`専用オブション(全て頭文字と解釈する)
     * 例 - 小さめの大文字で'ATTR'と表示する。
@@ -2874,6 +2903,10 @@ div.panel.panel-default
     li.list-group-item 日本
     li.list-group-item ギリシャ
 ```
+
+## Responsive embed
+
+> Ver 3.2で追加された(略)。
 
 ## Wells
 
