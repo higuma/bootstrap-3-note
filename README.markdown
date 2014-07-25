@@ -247,7 +247,7 @@ HTML側はnavbarにこのクラスを追加すればよい。この程度なら�
 
 > 和訳作成プロジェクトがあるかも知れないが完成まで待つ訳にはいかない。それにこういう文書は足が早いのでどうせ2年もすれば古くなる。結局(たとえ和訳があっても)原文を読むのが一番の近道。
 
-> > こうやって書いた後1ヶ月も立たないうちにもうバージョンが上がって文章も変わっている。翻訳など待っていては話にならない。
+> > こうやって書いた後1ヶ月も経たないうちにもうバージョンが上がって文章も変わっている。翻訳など待っていては話にならない。
 
 ------------------------------------------------------------------------
 
@@ -2092,11 +2092,11 @@ div.input-group
       | Action
       span.caret
     ul.dropdown-menu
-      li: a(a href="#") Action
-      li: a(a href="#") Another action
-      li: a(a href="#") Something else here
+      li: a(href="#") Action
+      li: a(href="#") Another action
+      li: a(href="#") Something else here
       li.divider
-      li: a(a href="#") Separated link
+      li: a(href="#") Separated link
   input.form-control(type="text")
 ```
 
@@ -2118,11 +2118,11 @@ form(role='form')
       button.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown")
         span.caret
       ul.dropdown-menu
-        li: a(a href="#") action
-        li: a(a href="#") another action
-        li: a(a href="#") something else here
+        li: a(href="#") action
+        li: a(href="#") another action
+        li: a(href="#") something else here
         li.divider
-        li: a(a href="#") separated link
+        li: a(href="#") separated link
     input.form-control(type="text")
 ```
 
@@ -2189,11 +2189,11 @@ ul.nav.nav-tabs
       | Dropdown 
       span.caret
     ul.dropdown-menu
-      li: a(a href="#") Action
-      li: a(a href="#") Another action
-      li: a(a href="#") Something else here
+      li: a(href="#") Action
+      li: a(href="#") Another action
+      li: a(href="#") Something else here
       li.divider
-      li: a(a href="#") Separated link
+      li: a(href="#") Separated link
 ```
 
 ## Navbar
@@ -2241,11 +2241,11 @@ nav.nav.navbar-default
             | Dropdown 
             b.caret
         ul.dropdown-menu
-          li: a(a href="#") Action
-          li: a(a href="#") Another action
-          li: a(a href="#") Something else here
+          li: a(href="#") Action
+          li: a(href="#") Another action
+          li: a(href="#") Something else here
           li.divider
-          li: a(a href="#") Separated link
+          li: a(href="#") Separated link
 ```
 
 * navはHTML5要素
